@@ -109,6 +109,8 @@ function setSort(){
 
         const todoList = JSON.parse(window.localStorage.getItem("todoList"));
 
+        if(!todoList) return false;
+
         todoList.sort((a, b) => a.index - b.index)
         window.localStorage.setItem("todoList", JSON.stringify(todoList));
 
@@ -120,6 +122,8 @@ function setSort(){
 
         const todoList = JSON.parse(window.localStorage.getItem("todoList"));
 
+        if(!todoList) return false;
+        
         todoList.sort((a, b) => new Date(a.date) - new Date(b.date))
         window.localStorage.setItem("todoList", JSON.stringify(todoList));
 
