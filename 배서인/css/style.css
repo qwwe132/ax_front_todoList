@@ -1,0 +1,76 @@
+/* font: pretendard */
+body {
+font-family: 'Pretendard', sans-serif;
+font-weight: 400;
+font-style: normal;
+}
+
+/* root var */
+:root {
+    --primary-font-color: black;
+    --primary-font-family: 'Pretendard', sans-serif;
+    --primary-font-size: 16px;
+}
+
+/* init style */
+* {
+    outline: none;
+}
+
+body {
+    margin: 0;
+}
+
+ul, ol, dl, dt, dd {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+}
+
+img {
+    border: 0;
+}
+
+/* common style */
+* {
+    box-sizing: border-box;
+    font-family: var(--primary-font-family);
+}
+
+html {
+    font-size: var(--primary-font-size);
+}
+
+body {
+    margin: 0;
+    color: var(--primary-font-color);
+    font-size: var(--primary-font-size);
+    font-weight: 400;
+}
+
+a {
+    text-decoration: none;
+}
+
+ul, ol, li, dl, dt, dd {
+    margin:0;
+    padding:0;
+    list-style: none;
+}
+
+
+h1, h2, h3, h4 {
+    margin: 0;
+    font-weight: normal;
+}
+
+
+header {
+    display: flex;
+    background-color:  #b8f0e0;
+
+}

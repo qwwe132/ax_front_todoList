@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=2.0">
+    <title>서인의 투두</title>
+    <!-- favicon png -->
+    <link rel="icon" href="image/free-sticker-duck-9791169.png">
+    <!-- css stylesheet -->
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <!-- Font file : pretendard -->
+    <link rel="stylesheet" href="font/pretendard">
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <!-- java script -->
+    <script src="js/todo.js"></script>
+</head>
+<body>
+    <header>
+        <!-- 헤더: 페이지 제목과 메인 랜딩페이지로 돌아가기 버튼 -->
+        <h1 class="px-4 py-2 text-2xl text-center decoration-8 mb-4">To Do List</h1>
+    </header>
+    <main>
+        <!-- 메인파트1 : 할일 내용 기입하고 등록하기 -->
+        <form name="frmTodo" method="post" class="px-4 py-2">
+            <ul>
+                <li class="flex">
+                    <span class="basis-16 p-1 text-center mr-4">날짜</span>
+                    <input class="grow border-rounded-sm w-full h-8" type="date" name="date" placeholder="목표 마감일을 설정하세요.">
+                </li>
+                <li class="flex">
+                    <span class="basis-16 p-1 text-center mr-4">제목</span>
+                    <input class="grow border-rounded-sm w-full h-8" type="text" name="task" placeholder="할 일의 제목을 지어주세요.">
+                </li>
+                <li class="flex">
+                    <span class="basis-16 p-1 text-center mr-4">내용</span>
+                    <textarea class="grow border-rounded-sm w-full h-25" name="detail" placeholder="할 일이 무엇인가요?"></textarea>
+                </li>
+            </ul>
+            <button type="submit" class="bg-taupe-500 hover:bg-taupe-700 text-white font-bold py-2 px-4 rounded-lg block mx-auto cursor-pointer w-64">등록하기</button>
+        </form>
+
+        <ul id="todo-items" class="m-4 p-4 grid md:grid-cols-2 gap-4">
+        <!-- 발표용 임의 배치 -->
+            <li id="item-${uid}" class="border border-grey-300 rounded-lg group p-4">
+                <div class="group-hover:shadow-md">날짜</div>
+                <div class="">내용</div>
+                <div class="flex justify-between">
+                    <button type="button" class="delete-action grow py-2 bg-taupe-500 hover:bg-taupe-700 text-white cursor-pointer" data-uid="${uid}">삭제</button>
+                    <button type="button" class="edit-action grow py-2 bg-taupe-500 hover:bg-taupe-700 text-white cursor-pointer" data-uid="${uid}">수정</button>
+                </div>
+            </li>
+            <li id="item-${uid}" class="border border-grey-300 rounded-lg group p-4">
+                <div class="group-hover:shadow-md">날짜</div>
+                <div class="">내용</div>
+                <div class="flex justify-between">
+                    <button type="button" class="delete-action grow py-2 bg-taupe-500 hover:bg-taupe-700 text-white cursor-pointer" data-uid="${uid}">삭제</button>
+                    <button type="button" class="edit-action grow py-2 bg-taupe-500 hover:bg-taupe-700 text-white cursor-pointer" data-uid="${uid}">수정</button>
+                </div>
+            </li>
+
+        </ul>    
+
+        <script type="text/html" id="tpl">
+            <li id="item-${uid}" class="border border-grey-300 rounded-lg group p-4">
+                <div class="group-hover:shadow-md">[${date}]${title}</div>
+                <div class="">${content}</div>
+                <div class="flex justify-between">
+                    <button type="button" class="delete-action grow py-2 bg-taupe-500 hover:bg-taupe-700 text-white cursor-pointer" data-uid="${uid}">삭제</button>
+                    <button type="button" class="edit-action grow py-2 bg-taupe-500 hover:bg-taupe-700 text-white cursor-pointer" data-uid="${uid}">수정</button>
+                </div>
+            </li>
+        </script>
+
+    </main>
+    <footer>
+        <!-- 하단 정보 : 프로젝트 제목과 발표일 등 정보 명시 -->
+        <p class="text-center absolute inset-x-0 bottom-0">@ KANT AX 1기 <br> Mini Team Project : Frontend Dev. <br>Made and Presented by Frontend Team 02 <br>Date: 2026-10-02</p>
+    </footer>
+</body>
+</html>
