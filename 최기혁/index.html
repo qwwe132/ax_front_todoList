@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>To do List</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" type="text/css" href="./css/style.css">
+</head>
+<body>
+    <header class="header box-border h-16 flex items-center">
+        <p class="pl-6 text-2xl">To do List</p>
+    </header>
+    <main class="main justify-center">
+        <div class="input-box box-border flex-col w-full flex p-6 justify-center items-center">
+            <div class="input-date box-border flex w-full m-6 items-center text-2xl">
+                <span class="mx-6">날짜</span>
+                <input type="date" class="border box-border ml-6 flex-1 text-lg px-3 py-2">
+            </div>
+            <div class="input-title box-border flex w-full m-6 items-center text-2xl">
+                <span class="mx-6">제목</span>
+                <input type="text" class="border box-border ml-6 flex-1 text-lg px-3 py-2" placeholder="제목 입력">
+            </div>
+            <div class="input-text box-border flex w-full m-6 items-center text-2xl">
+                <span class="mx-6">내용</span>
+                <textarea placeholder="내용 입력" class="border box-border h-32 ml-6 flex-1 text-lg px-3 py-2 resize-none"></textarea>
+            </div>
+            <button class="button-to-register w-60 h-16 rounded-lg m-4 text-2xl cursor-pointer" id="modernPrependBtn">등록</button>
+        </div>
+        <div class="list-list justify-evenly flex-1 justify-center items-center">
+            <ol class="h-full flex flex-col" id="ordered-to-do-list">
+                <div class="to-do-list w-80 h-64 box-border rounded-lg flex-col flex p-4 m-6">
+                    <div class="list-date-title box-border w-full mb-2">[$(date)]$(title)</div>
+                    <div class="list-content-wrap flex flex-col flex-1 min-h-0 overflow-hidden">
+                        <div class="list-content box-border w-full flex-1 mb-2 overflow-y-auto wrap-break-word">$(content)</div>
+                        <div class="list-buttons box-border w-full flex gap-2 shrink-0">
+                            <button class="button-content-edit rounded-lg box-border h-8 flex flex-1 justify-center items-center cursor-pointer">수정</button>
+                            <button class="button-content-delete rounded-lg box-border h-8 flex flex-1 justify-center items-center cursor-pointer" id="modernRemoveBtn">삭제</button>
+                        </div>
+                    </div>
+                </div>
+            </ol>
+        </div>
+    </main>
+    <script>
+        const list = document.getElementById("ordered-to-do-list");
+        const modernPrependBtn = document.getElementById("modernPrependBtn");
+        const modernRemoveBtn = document.getElementById("modernRemoveBtn");
+        modernPrependBtn.onclick = function() {
+            const newLi = document.createElement("li");
+            newLi.textContent = " !!! ";
+            list.prepend(newLi);
+        };
+
+        modernRemoveBtn.onclick = function() {
+            const firstItem = list.firstElementChild;
+            if (firstItem) {
+                firstItem.remove();
+            }
+        };
+    </script>
+</body>
+</html>
