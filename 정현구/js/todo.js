@@ -7,7 +7,7 @@ if(window.localStorage.getItem("index")){
 
 loadTodoList();
 loadTrashTodoList();
-setSort();
+loadSort();
 
 form.addEventListener("submit", (e) => {
     e.preventDefault();
@@ -22,12 +22,12 @@ form.addEventListener("submit", (e) => {
 
 document.querySelector(".sort_regist").addEventListener("click", (e) => {
     window.localStorage.setItem("sort", "regist");
-    setSort();
+    loadSort();
 })
 
 document.querySelector(".sort_date").addEventListener("click", (e) => {
     window.localStorage.setItem("sort", "date");
-    setSort();
+    loadSort();
 })
 
 function loadTodoList(){
@@ -99,7 +99,7 @@ function validateForm(formData){
     return true;
 }
 
-function setSort(){
+function loadSort(){
     let sort = window.localStorage.getItem("sort") ? 
                     window.localStorage.getItem("sort") : "regist";
     
@@ -123,7 +123,7 @@ function setSort(){
         const todoList = JSON.parse(window.localStorage.getItem("todoList"));
 
         if(!todoList) return false;
-        
+
         todoList.sort((a, b) => new Date(a.date) - new Date(b.date))
         window.localStorage.setItem("todoList", JSON.stringify(todoList));
 
@@ -203,6 +203,8 @@ function setTodoList(formData) {
 
     const input = form.querySelector('[name="index"]');
     if(input) input.remove();
+
+    loadSort();
 }
 
 todoWrap.addEventListener("click", (e) => {
@@ -317,6 +319,7 @@ function recoverTodo(dataset){
 
     loadTrashTodoList();
     loadTodoList();
+    loadSort();
 }
 
 function deleteTodo(dataset){
