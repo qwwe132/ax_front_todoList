@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang='en'>
+<head>
+    <meta charset='utf-8'>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <title>Todo List</title>
+    <link rel="stylesheet" href="css/todo.css"/>
+    <script src="js/todo.js" defer></script>
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+<body>
+    <header>
+        <div class="bg-[#ffd8a8] h-[50px] pl-[5px] pr-[5px]">
+            <span class="text-white leading-[50px]">할일 등록</span>
+            <a class="text-white leading-[50px] float-right cursor-pointer" href="/index.html">메인으로</a>
+        </div>
+    </header>
+    <main class="mt-[15px]">
+        <div>
+            <form id="todo-form">
+                <table class="w-full">
+                    <colgroup>
+                        <col width="15%"/>
+                        <col width="85%"/>
+                    </colgroup>
+                    <tbody>
+                        <tr>
+                            <th class="p-[10px]">
+                                날짜
+                            </th>
+                            <td class="p-[10px]">
+                                <input type="date" name="date" class="w-full border-solid border rounded-sm border-gray-300 p-[5px]" value="" placeholder="" />
+                            </td>
+                        </tr>
+                        <tr>
+                            <th class="p-[10px]">
+                                제목
+                            </th>
+                            <td class="p-[10px]">
+                                <input type="text" name="title" value="" class="w-full border-solid border rounded-sm border-gray-300 p-[5px]" placeholder="제목 입력"/>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th class="p-[10px]"> 
+                                내용
+                            </th>
+                            <td class="p-[10px]">
+                                <textarea name="content" class="w-full h-[100px] border-solid border rounded-sm border-gray-300 p-[5px]" style="resize: none;"placeholder="내용 입력" ></textarea>
+                            </td>
+                        </tr>
+                    </tbody>
+                    <tfoot>
+                        <td colspan="2" class="text-center">
+                            <span class="sort_wrap">
+                                <span class="sort_regist">등록순</span>
+                                |
+                                <span class="sort_date">날짜순</span>
+                            </span>
+                            <button id="btn-add" type="submit" class="p-[5px] bg-[#ffd8a8] text-white w-[20%] rounded-sm border-gray-300">등록하기</button>
+                            <i class="fa-solid fa-trash trashcan"></i>
+                        </td>
+                    </tfoot>
+                </table>
+            </form>
+        </div>
+        <div class="todo-wrap">
+        </div>
+    </main>
+
+<dialog id="trash-modal">
+    <h2>휴지통</h2>
+    <div class="trash-todo">
+    </div>
+    <button id="btn-close" class="trt-btn">닫기</button>
+</dialog>
+<template id="template-todo">
+    <div class="todo">
+        <div class="todo-head">
+            <span class="todo-title"></span>
+        </div>
+        <div class="todo-main">
+            <span class="todo-content"></span>
+        </div>
+        <div class="todo-footer">
+            <button class="btn btn-remove">삭제</button>
+            <button class="btn btn-update" data-title="" data-content="" data-date="">수정</button>
+        </div>
+    </div>
+</template>
+<template id="template-trash">
+    <div class="trt_wrap">
+        <div class="trt_date"></div>
+        <div class="trt_title"></div>
+        <div class="trt_content"></div>
+        <div class="trt_btn_wrap">
+            <button class="trt-btn btn-recover">복구</button>
+            <button class="trt-btn btn-delete">삭제</button>
+        </div>
+    </div>
+</template>
+
+</body>
+</html>

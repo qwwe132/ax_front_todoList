@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="css/[김태양]style.css">
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <title>Todo-List</title>
+</head>
+<body class="main-page">
+    <header class="todo-header bg-sky-500/50 text-white">
+        <div class="todo-push">할일등록</div>
+    </header>
+    <main>
+        <div class="wrapper">
+            <div class="date flex mb-2">
+                <div class="basis-[100px]">날짜</div>
+                <input type="date" id="todoDate" class="date1 border grow rounded-sm py-1 px-2 border-gray-300" >
+            </div>
+            <div class="work_name flex mb-2">
+                <div class="basis-[100px]">제목</div>
+                <input type="text" id="todoTitle" class="todonameinput border grow rounded-sm py-1 px-2 border-gray-300"  placeholder="제목 입력" >
+            </div>
+
+            <div class="todo flex">
+                <div class="basis-[100px]">내용</div>
+                    <textarea type="text" id="todoContent" class="todolist1 border grow rounded-sm py-1 px-2 mb-2 border-gray-300" placeholder="내용 입력"></textarea>
+                
+            </div>
+            <div class="check text-center">
+                <button type="button" class="summit border grow rounded-sm py-1 px-60 mb-2 bg-sky-500/50 text-white">등록하기</button>
+            </div>
+            <div class="todoworkinglist grid md:grid-cols-2 gap-4"></div>
+        </div>
+    </main>
+    </div>
+    <script src="js/[김태양]todo.js"></script>
+</body>
+</html>

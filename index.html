@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>2조의 할 일 게시판</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Gaegu:wght@400;700&family=Noto+Sans+KR:wght@400;500&display=swap" rel="stylesheet" />
+  <style>
+    body {
+      background-color: #efe7d8;
+      background-image: radial-gradient(#d6cab3 1.2px, transparent 1.2px);
+      background-size: 22px 22px;
+      color: #2b2b2b;
+      font-family: "Noto Sans KR", sans-serif;
+    }
+
+    .hand {
+      font-family: "Gaegu", cursive;
+      font-weight: 700;
+    }
+
+    /* 포스트잇 */
+    .note {
+      position: relative;
+      width: 220px;
+      min-height: 200px;
+      padding: 32px 22px 22px;
+      background: var(--c);
+      box-shadow: 0 10px 18px -8px rgba(0, 0, 0, 0.3);
+      transform: rotate(var(--r));
+      transition: transform 0.25s, box-shadow 0.25s;
+    }
+
+    /* 위쪽 테이프 */
+    .note::before {
+      content: "";
+      position: absolute;
+      top: -12px;
+      left: 50%;
+      width: 84px;
+      height: 26px;
+      background: rgba(255, 255, 255, 0.55);
+      box-shadow: 0 1px 2px rgba(0, 0, 0, 0.08);
+      transform: translateX(-50%) rotate(-3deg);
+    }
+
+    .note:hover {
+      z-index: 1;
+      box-shadow: 0 22px 30px -10px rgba(0, 0, 0, 0.35);
+      transform: rotate(0deg) scale(1.05);
+    }
+
+    /* 마우스 올리면 체크박스가 체크됨 */
+    .box-on {
+      display: none;
+    }
+
+    .note:hover .box-off {
+      display: none;
+    }
+
+    .note:hover .box-on {
+      display: inline;
+    }
+  </style>
+</head>
+<body>
+  <main class="mx-auto max-w-5xl px-5 py-14">
+    <!-- 제목 -->
+    <header class="mb-14 text-center">
+      <h1 class="hand text-5xl md:text-6xl">2조의 할 일 게시판 📌</h1>
+      <p class="mt-3 text-sm opacity-60">붙어있는 메모를 눌러 팀원들의 TODO 리스트를 구경해보세요</p>
+    </header>
+
+    <!-- 포스트잇 -->
+    <div class="flex flex-wrap justify-center gap-x-10 gap-y-12">
+      <a href="김선규/index.html" class="note" style="--c: #fff27a; --r: -3deg">
+        <p class="hand text-3xl"><span class="box-off">☐</span><span class="box-on">☑</span> 김선규</p>
+        <p class="mt-3 text-sm opacity-70">의 할 일 목록</p>
+        <p class="hand mt-6 text-xl" name="page-move" data-url="">보러 가기 →</p>
+      </a>
+      <a href="배유민/index.html" class="note" style="--c: #ffc9de; --r: 2deg">
+        <p class="hand text-3xl"><span class="box-off">☐</span><span class="box-on">☑</span> 배유민</p>
+        <p class="mt-3 text-sm opacity-70">의 할 일 목록</p>
+        <p class="hand mt-6 text-xl" name="page-move" data-url="">보러 가기 →</p>
+      </a>
+      <a href="김태양/index.html" class="note" style="--c: #bfe3ff; --r: -1.5deg">
+        <p class="hand text-3xl"><span class="box-off">☐</span><span class="box-on">☑</span> 김태양</p>
+        <p class="mt-3 text-sm opacity-70">의 할 일 목록</p>
+        <p class="hand mt-6 text-xl" name="page-move" data-url="">보러 가기 →</p>
+      </a>
+      <a href="김정민/index.html" class="note" style="--c: #c8f2c2; --r: 3deg">
+        <p class="hand text-3xl"><span class="box-off">☐</span><span class="box-on">☑</span> 김정민</p>
+        <p class="mt-3 text-sm opacity-70">의 할 일 목록</p>
+        <p class="hand mt-6 text-xl" name="page-move" data-url="">보러 가기 →</p>
+      </a>
+      <a href="정현구/index.html" class="note" style="--c: #ffd8a8; --r: -2deg">
+        <p class="hand text-3xl"><span class="box-off">☐</span><span class="box-on">☑</span> 정현구</p>
+        <p class="mt-3 text-sm opacity-70">의 할 일 목록</p>
+        <p class="hand mt-6 text-xl" name="page-move" data-url="">보러 가기 →</p>
+      </a>
+      <a href="최기혁/index.html" class="note" style="--c: #dccbff; --r: 1.5deg">
+        <p class="hand text-3xl"><span class="box-off">☐</span><span class="box-on">☑</span> 최기혁</p>
+        <p class="mt-3 text-sm opacity-70">의 할 일 목록</p>
+        <p class="hand mt-6 text-xl" name="page-move" data-url="">보러 가기 →</p>
+      </a>
+      <a href="배서인/index.html" class="note" style="--c: #b8f0e0; --r: -2.5deg">
+        <p class="hand text-3xl"><span class="box-off">☐</span><span class="box-on">☑</span> 배서인</p>
+        <p class="mt-3 text-sm opacity-70">의 할 일 목록</p>
+        <p class="hand mt-6 text-xl" name="page-move" data-url="">보러 가기 →</p>
+      </a>
+    </div>
+
+    <footer class="hand mt-20 text-center text-lg opacity-50">© 2026 2조 · 프론트엔드 TODO 과제</footer>
+  </main>
+</body>
+</html>

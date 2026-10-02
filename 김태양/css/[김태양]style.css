@@ -1,0 +1,10 @@
+.todo-header {
+    width: 100%px;
+    padding: 10px;
+}
+
+.wrapper {
+    box-sizing: content-box;
+    padding: 20px;
+    align-items: center;
+}

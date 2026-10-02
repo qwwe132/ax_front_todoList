@@ -1,0 +1,161 @@
+main {
+    padding: 0% 3% 0% 3%
+}
+
+button:hover {
+    cursor: pointer;
+}
+
+
+.todo-wrap {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 30px;
+    margin-top: 50px;
+}
+
+.todo {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    padding: 10px;
+    border: 1px solid gray;
+    border-radius: 6px;
+}
+
+.todo-head {
+    padding: 3px;
+}
+
+.todo-title {
+    color: rgb(156, 233, 41);
+    font-weight: bold;
+}
+
+.todo-main {
+    border: 1px solid rgb(230, 230, 230);
+    padding: 10px;
+    font-weight: bold;
+    min-height: 150px;
+    max-height: 150px;
+    overflow: auto;
+}
+
+.todo-footer {
+    display: flex;
+    justify-content: center;
+    gap: 2%;
+}
+
+.btn {
+    flex: 1;
+    border-radius: 4px;
+    color: white;
+    height: 30px;
+}
+
+.btn-remove {
+    background-color: red;
+}
+
+.btn-update {
+    background-color: mediumslateblue;
+}
+
+.trashcan {
+    display: inline-block;
+    float: right;
+}
+
+.trashcan:hover {
+    cursor: pointer;
+}
+
+#trash-modal {
+    position: absolute;
+    top: 25%;
+    left: 25%;
+    width: 50%;
+    border-radius: 4px;
+    padding: 15px;
+}
+
+#trash-modal h2 {
+    font-size: 25px;
+    font-weight: bold;
+}
+
+.trash-todo {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 25px;
+    overflow-y: auto;
+    margin-top: 25px;
+    margin-bottom: 50px;
+}
+
+.trt_wrap {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid black;
+}
+
+.trt_wrap .trt_date {
+    flex-basis: 100%;
+    text-align: left;
+}
+
+.trt_wrap .trt_title {
+    width: 15%;
+}
+
+.trt_wrap .trt_content {
+    flex: 1;
+    overflow: auto;
+}
+
+.trt_wrap div {
+    text-align: center;
+    padding: 5px;
+    max-height: 150px;
+}
+
+.trt-btn {
+    padding: 3px 15px;
+    border-radius: 4px;
+    color: white;
+}
+
+.btn-recover {
+    background-color: green;
+}
+
+.btn-delete {
+    background-color: red;
+}
+
+#btn-close {
+    position: absolute;
+    bottom: 5px;
+    right: 10px;
+    background-color: rgb(0, 102, 255);
+}
+
+.sort_wrap {
+    float: left;
+}
+
+.sort_wrap {
+    color: rgb(211, 209, 209);
+}
+
+.sort_wrap .active {
+    color: black;
+    font-weight: bold;
+}
+
+.sort_wrap span:hover {
+    cursor: pointer;
+}
